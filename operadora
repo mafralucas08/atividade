@@ -1,0 +1,19 @@
+using System;
+class Program {
+    static void Main() {
+        const double PLANO = 50.0;
+        const int FRANQUIA = 100;
+        const double CUSTO_EXCESSO = 2.0;
+
+        Console.WriteLine("Quantidade de minutos consumidos:");
+        int minutos = int.Parse(Console.ReadLine());
+
+        double total = PLANO;
+        if (minutos > FRANQUIA) {
+            int excesso = minutos - FRANQUIA;
+            total += excesso * CUSTO_EXCESSO;
+        }
+
+        Console.WriteLine($"Valor a pagar: R$ {total:F2}");
+    }
+}
