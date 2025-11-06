@@ -1,0 +1,28 @@
+using System;
+class Program {
+    static void Main() {
+        Console.WriteLine("Código do destino (1 Morros, 2 Barreirinhas, 3 Bacabeira, 4 Rosário):");
+        int codigo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Compra de ida e volta? (s/n):");
+        string idaVolta = Console.ReadLine().Trim().ToLower();
+
+        double valor;
+        switch (codigo) {
+            case 1: valor = 120.0; break;
+            case 2: valor = 200.0; break;
+            case 3: valor = 50.0; break;
+            case 4: valor = 80.0; break;
+            default:
+                Console.WriteLine("Código inválido.");
+                return;
+        }
+
+        bool idaVoltaBool = idaVolta == "s" || idaVolta == "sim";
+        double total = valor;
+        if (idaVoltaBool) {
+            total = valor * 2.0 * 0.90; // 10% de desconto sobre ida+volta
+        }
+
+        Console.WriteLine($"Valor total da passagem: R$ {total:F2}");
+    }
+}
