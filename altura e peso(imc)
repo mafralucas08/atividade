@@ -1,0 +1,18 @@
+using System;
+class Program {
+    static void Main() {
+        Console.WriteLine("Informe a altura em metros (ex: 1.75):");
+        double altura = double.Parse(Console.ReadLine());
+        Console.WriteLine("Informe o peso em kg (ex: 70.5):");
+        double peso = double.Parse(Console.ReadLine());
+
+        double imc = peso / (altura * altura);
+        Console.WriteLine($"IMC: {imc:F2}");
+
+        // classificação básica (opcional)
+        if (imc < 18.5) Console.WriteLine("Classificação: Abaixo do peso");
+        else if (imc < 25) Console.WriteLine("Classificação: Peso normal");
+        else if (imc < 30) Console.WriteLine("Classificação: Sobrepeso");
+        else Console.WriteLine("Classificação: Obesidade");
+    }
+}
