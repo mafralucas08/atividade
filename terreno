@@ -1,0 +1,17 @@
+using System;
+class Program {
+    static void Main() {
+        Console.WriteLine("Entre com a largura (uma casa decimal):");
+        double largura = double.Parse(Console.ReadLine());
+        Console.WriteLine("Entre com o comprimento (uma casa decimal):");
+        double comprimento = double.Parse(Console.ReadLine());
+        Console.WriteLine("Entre com o valor do m² (duas casas decimais):");
+        double valorM2 = double.Parse(Console.ReadLine());
+
+        double area = largura * comprimento;
+        double preco = area * valorM2;
+
+        Console.WriteLine($"Área do terreno: {area:F2}");
+        Console.WriteLine($"Preço do terreno: R$ {preco:F2}");
+    }
+}
