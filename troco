@@ -1,0 +1,17 @@
+using System;
+class Program {
+    static void Main() {
+        Console.WriteLine("Preço unitário do produto (ex: 12.50):");
+        double precoUnit = double.Parse(Console.ReadLine());
+        Console.WriteLine("Quantidade comprada (inteiro):");
+        int quantidade = int.Parse(Console.ReadLine());
+        Console.WriteLine("Valor pago em dinheiro (ex: 100.00):");
+        double pago = double.Parse(Console.ReadLine());
+
+        double total = precoUnit * quantidade;
+        double troco = pago - total;
+
+        Console.WriteLine($"Total a pagar: R$ {total:F2}");
+        Console.WriteLine($"Troco: R$ {troco:F2}");
+    }
+}
